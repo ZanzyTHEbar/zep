@@ -2,10 +2,10 @@ name: zep-ce
 
 services:
   zep:
-    image: zepai/zep:latest
-    #    build:
-    #      context: .
-    #      dockerfile: Dockerfile.ce
+    #image: zepai/zep:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.ce
     ports:
       - "8000:8000"
     volumes:
