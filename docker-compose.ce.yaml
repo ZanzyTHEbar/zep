@@ -12,8 +12,8 @@ services:
       - ./zep.yaml:/app/zep.yaml
     environment:
       - ZEP_CONFIG_FILE=zep.yaml
-      - MODEL_NAME=gemini/*
-      - OPENAI_BASE_URL=https://litellm.zacariahheim.com
+      - MODEL_NAME=${LITELLM_MODEL_NAME}
+      - OPENAI_BASE_URL=${LITELLM_API_URL}
       - OPENAI_API_KEY=${OPENAI_API_KEY}
     networks:
       - zep-network
