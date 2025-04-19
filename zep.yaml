@@ -31,7 +31,7 @@ graphiti:
 # In order to authenicate API requests to the Zep service, a secret must be provided.
 # This secret should be kept secret between the Zep service and the client. It can be any string value.
 # When making requests to the Zep service, include the secret in the Authorization header.
-api_secret:
+api_secret: ${ZEP_SECRET}
 # In order to better understand how Zep is used, we can collect telemetry data.
 # This is optional and can be disabled by setting disabled to true.
 # We do not collect any PII or any of your data. We only collect anonymized data
