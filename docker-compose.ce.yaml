@@ -16,8 +16,8 @@ services:
       - MODEL_NAME=${LITELLM_MODEL_NAME}
       - OPENAI_BASE_URL=${LITELLM_API_URL}
       - OPENAI_API_KEY=${OPENAI_API_KEY}
-    networks:
-      - zep-network
+    #networks:
+    #  - zep-network
     depends_on:
       graphiti:
         condition: service_healthy
@@ -31,8 +31,8 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-    networks:
-      - zep-network
+    #networks:
+    #  - zep-network
     healthcheck:
       test: ["CMD", "pg_isready", "-q", "-d", "postgres", "-U", "postgres"]
       interval: 5s
@@ -48,8 +48,8 @@ services:
       - "8003:8003"
     env_file:
       - .env
-    networks:
-      - zep-network
+    #networks:
+    #  - zep-network
     healthcheck:
       test:
         [
@@ -73,8 +73,8 @@ services:
       - PORT=8003
   neo4j:
     image: neo4j:5.22.0
-    networks:
-      - zep-network
+    #networks:
+    #  - zep-network
     healthcheck:
       test: wget http://localhost:7687 || exit 1
       interval: 1s
@@ -91,6 +91,6 @@ services:
 volumes:
   neo4j_data:
   zep-db:
-networks:
-  zep-network:
-    driver: bridge
+#networks:
+#  zep-network:
+#    driver: bridge
