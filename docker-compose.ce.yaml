@@ -9,7 +9,7 @@ services:
     ports:
       - "9470:8000"
     volumes:
-      - ./zep.yaml:/app/zep.yaml
+      #- ./zep.yaml:/app/zep.yaml
     environment:
       - ZEP_SECRET=${ZEP_SECRET}
       - ZEP_CONFIG_FILE=zep.yaml
