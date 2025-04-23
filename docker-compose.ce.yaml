@@ -11,6 +11,7 @@ services:
     volumes:
       - ./zep.yaml:/app/zep.yaml
     environment:
+      - ZEP_SECRET=${ZEP_SECRET}
       - ZEP_CONFIG_FILE=zep.yaml
       - MODEL_NAME=${LITELLM_MODEL_NAME}
       - OPENAI_BASE_URL=${LITELLM_API_URL}
